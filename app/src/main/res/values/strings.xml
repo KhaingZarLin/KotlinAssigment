@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">KotlinAssigment</string>
+    <string name="movie">Movie</string>
+    <string name="showing">Now Showing</string>
+    <string name="cineam">Cinema</string>
+    <string name="coming">Coming Soon</string>
+    <string name="black">Balck Panther</string>
+    <string name="fanta">Fantasy/Science fiction . 2h 15m</string>
+    <string name="decimal">7.5</string>
+    <string name="percent1">97%</string>
+    <string name="percent2">92%</string>
+    <string name="imdb">IMDB</string>
+    <string name="rotten">ROTTEN TOMATO</string>
+    <string name="motacritice">MOTACRITICE</string>
+    <string name="buy">Buy Tickets</string>
+    <string name="paragraph">In this tutorial, we’ll learn about Android VideoView. We will create an android app in Android Studio and play video from URL, we will also do some customizations to it’s control panel.</string>
+    <string name="cast">cast</string>
+    <string name="natalie">Natalie Portman</string>
+    <string name="gina">Gina Rodrigue2</string>
+    <string name="oscarn">Oscar Isaac</string>
+    <string name="read">Read more</string>
+</resources>
