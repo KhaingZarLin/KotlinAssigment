@@ -17,6 +17,7 @@ import com.example.kotlinassigment.data.models.MovieModel
 import com.example.kotlinassigment.data.models.MovieModelImpl
 import com.example.kotlinassigment.data.vos.MovieVO
 import com.example.kotlinassigment.delegate.FragmentDelegateOne
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_movie.*
 
 
@@ -36,18 +37,14 @@ class MovieFragment : Fragment(),FragmentDelegateOne {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val linearLayoutManager: LinearLayoutManager
-
-        linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        recyclerview.setLayoutManager(linearLayoutManager)
-
         val movieAdapter = MovieAdapter(this)
-        recyclerview.setAdapter(movieAdapter)
+        recyclerview.setHasFixedSize(true)
+        recyclerview.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerview.adapter = movieAdapter
 
         MovieModelImpl.getAllMovies(
             onSuccess = {moviesVO ->
-                movieAdapter.setNewData(moviesVO as MutableList<MovieVO>)
-                recyclerview.adapter = movieAdapter
+                movieAdapter.setNewData(moviesVO.toMutableList())
             },
             onFailure = {
 
@@ -56,7 +53,7 @@ class MovieFragment : Fragment(),FragmentDelegateOne {
     }
 
     override fun onClicked(id: Int) {
-
+        startActivity(activity?.let { MovieDetialActivity.newIntent(it,id) })
     }
 
 

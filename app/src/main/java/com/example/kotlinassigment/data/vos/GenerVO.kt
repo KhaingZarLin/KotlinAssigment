@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "genre")
 data class GenreVO (
 
     @SerializedName("id")

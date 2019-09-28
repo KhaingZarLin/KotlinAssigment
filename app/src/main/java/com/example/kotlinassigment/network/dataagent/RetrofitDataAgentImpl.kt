@@ -30,8 +30,8 @@ object RetrofitDataAgentImpl:MovieDataAgent {
         movieApi=retrofit.create(MovieApi::class.java)
 
     }
-    override fun getAllMovies(onSuccess: (List<MovieVO>) -> Unit, onFailure: (String) -> Unit) {
-        movieApi.getAllMovies().enqueue(object: Callback<GetMovieResponse>{
+    override fun getAllMovies( accessToken: String,onSuccess: (List<MovieVO>) -> Unit, onFailure: (String) -> Unit) {
+        movieApi.getAllMovies(accessToken).enqueue(object: Callback<GetMovieResponse>{
             override fun onFailure(call: Call<GetMovieResponse>, t: Throwable) {
                 onFailure(t.localizedMessage)
             }

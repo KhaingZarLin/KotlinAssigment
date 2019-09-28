@@ -1,12 +1,15 @@
 package com.example.kotlinassigment.view.holder
 
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kotlinassigment.data.vos.MovieVO
 import com.example.kotlinassigment.delegate.FragmentDelegateOne
 import kotlinx.android.synthetic.main.item_view.view.*
 
-class MovieCollectionViewHolder(itemView: View, private val itemClicked: FragmentDelegateOne) : BaseViewHolder<MovieVO>(itemView) {
+
+class MovieCollectionViewHolder(itemView: View, private val itemClicked: FragmentDelegateOne) :
+    BaseViewHolder<MovieVO>(itemView) {
 
     init {
         itemView.setOnClickListener {

@@ -6,12 +6,9 @@ import com.example.kotlinassigment.network.dataagent.RetrofitDataAgentImpl
 import com.example.kotlinassigment.pesistence.MovieDB
 
 abstract class BaseModel {
-    protected var dataAgent: MovieDataAgent
+    protected val dataAgent: MovieDataAgent=RetrofitDataAgentImpl
 
-    init {
-        dataAgent = RetrofitDataAgentImpl
 
-    }
     protected lateinit var database: MovieDB
 
     fun initDatabase(context: Context){

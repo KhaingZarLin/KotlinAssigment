@@ -10,23 +10,23 @@ import com.example.kotlinassigment.pesistence.daos.MovieDao
 import com.example.kotlinassigment.pesistence.typeConventer.GenreTypeConverter
 import com.example.kotlinassigment.utilits.MovieConstants.DB_NAME
 
-@Database(entities = arrayOf(MovieVO::class), version = 2, exportSchema = false)
+@Database(entities = arrayOf(MovieVO::class), version = 4, exportSchema = false)
 @TypeConverters(GenreTypeConverter::class)
 abstract class MovieDB: RoomDatabase() {
 
     abstract fun movieDao(): MovieDao
 
     companion object{
-        var INSTANCE: MovieDB? = null
+        private var instance : MovieDB?= null
 
         fun getInstance(context: Context): MovieDB{
-            if (INSTANCE == null){
-                INSTANCE = Room.databaseBuilder(context, MovieDB::class.java, DB_NAME)
+            if (instance == null){
+                instance = Room.databaseBuilder(context, MovieDB::class.java, DB_NAME)
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build()
             }
-            return INSTANCE!!
+            return instance!!
         }
     }
 

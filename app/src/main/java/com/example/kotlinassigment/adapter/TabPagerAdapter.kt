@@ -8,10 +8,7 @@ import java.lang.reflect.Array.get
 
 class TabPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     override fun getCount(): Int {
-        val count: Int
-        count = 3
-
-        return count
+        return 3
     }
 
     override fun getItem(i: Int): Fragment {

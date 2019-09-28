@@ -1,6 +1,7 @@
 package com.example.kotlinassigment.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinassigment.R
@@ -20,4 +21,6 @@ class ActorInfoAdapter: RecyclerView.Adapter<ActorInfoViewHolder>() {
     override fun onBindViewHolder(holder: ActorInfoViewHolder, position: Int) {
 
     }
+
+
 }
